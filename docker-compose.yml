@@ -1,0 +1,16 @@
+
+services:
+  db_measures_shopper:
+    container_name: dev_db
+    # restart: always
+    image: postgres:13
+    ports:
+      - 4747:5432
+    environment:
+      POSTGRES_USER: leitor
+      POSTGRES_PASSWORD: l31t03
+      POSTGRES_DB: leituras
+    networks:
+      - shopper
+networks:
+  shopper:
