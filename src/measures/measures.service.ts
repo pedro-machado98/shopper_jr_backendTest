@@ -39,7 +39,7 @@ export class MeasuresService {
             }
         })
 
-        return 200;
+        return updatedMeasure;
     }
 
     async createMeasureByImage(createMeasureDTO: CreateMeasureDTO) {
