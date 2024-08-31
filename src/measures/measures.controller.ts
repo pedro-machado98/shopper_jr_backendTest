@@ -7,7 +7,7 @@ import { Utils } from './utils/utils';
 import { Measure_Type } from '@prisma/client';
 
 
-@Controller('measures')
+@Controller()
 export class MeasuresController {
 
     constructor(

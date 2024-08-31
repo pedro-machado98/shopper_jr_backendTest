@@ -21,9 +21,6 @@ services:
     - DATABASE_URL=postgresql://leitor:l31t03@dev_db:5432/leituras?schema=public
     networks:
       - shopper
-    depends_on:
-      db_measures_shopper:
-        condition: service_completed_successfully
 
 
 networks:
