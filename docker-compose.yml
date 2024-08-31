@@ -2,7 +2,6 @@
 services:
   db_measures_shopper:
     container_name: dev_db
-    # restart: always
     image: postgres:13
     ports:
       - 4747:5432
@@ -12,5 +11,20 @@ services:
       POSTGRES_DB: leituras
     networks:
       - shopper
+
+  shopper-backend:
+    restart: always
+    build: .
+    ports:
+      - 3000:3000
+    environment:
+    - DATABASE_URL=postgresql://leitor:l31t03@dev_db:5432/leituras?schema=public
+    networks:
+      - shopper
+    depends_on:
+      db_measures_shopper:
+        condition: service_completed_successfully
+
+
 networks:
   shopper:

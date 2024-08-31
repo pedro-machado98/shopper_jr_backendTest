@@ -74,6 +74,11 @@ export class MeasuresService {
                     image_url : "www.imageurl.com.br",
                     measure_value : measure_value
                 },
+                select: {
+                    measure_uuid:true,
+                    measure_value:true,
+                    image_url: true
+                }
             })
             return newMeasure;
         }

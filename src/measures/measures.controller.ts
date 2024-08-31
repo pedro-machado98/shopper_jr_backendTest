@@ -24,7 +24,6 @@ export class MeasuresController {
     ) {
 
         if((measureType === 'WATER') || (measureType === "GAS") || (!measureType)) {
-            console.log('Customer Code:', customerCode);
             let measures = await this.measuresService.getListMeasuresByUser(customerCode, measureType);
 
             if(measures) {
@@ -74,7 +73,7 @@ export class MeasuresController {
 
         res.status(HttpStatus.OK).send({
             "image_url": createdMeasure.image_url,
-            "measure_value": 32.64,
+            "measure_value": createdMeasure.measure_value,
             "measure_uuid": createdMeasure.measure_uuid
         })
     }
